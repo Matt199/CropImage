@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,59 +15,61 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CropImage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uv-E0-9Bh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="308"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4x-XJ-PsG">
+                                <rect key="frame" x="137" y="381.5" width="46" height="29.5"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="cropButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RAy-hr-Uzn"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7au-Np-DdW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="334.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YlH-rx-Nc0">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="308"/>
-                                        <gestureRecognizers/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XPs-XJ-kbP">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="335"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="375" id="0ab-IW-3T1"/>
-                                            <constraint firstAttribute="height" constant="308" id="yaA-B7-x0t"/>
+                                            <constraint firstAttribute="width" constant="320" id="8Ss-Ot-X3I"/>
+                                            <constraint firstAttribute="height" constant="335" id="N2j-kC-fE3"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="YlH-rx-Nc0" firstAttribute="top" secondItem="4uv-E0-9Bh" secondAttribute="top" id="G4W-Nh-0tP"/>
-                                    <constraint firstAttribute="width" secondItem="4uv-E0-9Bh" secondAttribute="height" multiplier="375:308" id="cwo-dC-VMh"/>
-                                    <constraint firstAttribute="trailing" secondItem="YlH-rx-Nc0" secondAttribute="trailing" id="ptz-El-0jT"/>
-                                    <constraint firstItem="YlH-rx-Nc0" firstAttribute="leading" secondItem="4uv-E0-9Bh" secondAttribute="leading" id="wob-ap-at9"/>
-                                    <constraint firstAttribute="bottom" secondItem="YlH-rx-Nc0" secondAttribute="bottom" id="zKE-NC-qkY"/>
+                                    <constraint firstItem="XPs-XJ-kbP" firstAttribute="leading" secondItem="7au-Np-DdW" secondAttribute="leading" id="DJO-AU-6NU"/>
+                                    <constraint firstAttribute="trailing" secondItem="XPs-XJ-kbP" secondAttribute="trailing" id="i2U-DK-DlO"/>
+                                    <constraint firstAttribute="width" secondItem="7au-Np-DdW" secondAttribute="height" multiplier="160:167" id="m9U-Fp-Fl2"/>
+                                    <constraint firstAttribute="bottom" secondItem="XPs-XJ-kbP" secondAttribute="bottom" constant="-0.5" id="pwc-Kv-bb7"/>
+                                    <constraint firstItem="XPs-XJ-kbP" firstAttribute="top" secondItem="7au-Np-DdW" secondAttribute="top" id="rqI-NV-Ibj"/>
                                 </constraints>
-                            </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu2-TJ-P2U">
-                                <rect key="frame" x="164" y="617" width="46" height="30"/>
-                                <state key="normal" title="Crop "/>
                                 <connections>
-                                    <action selector="cropButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h12-M1-e9d"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mCy-Il-gQG"/>
                                 </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4uv-E0-9Bh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5bH-q3-7L0"/>
-                            <constraint firstItem="4uv-E0-9Bh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9oP-Xi-8hN"/>
-                            <constraint firstItem="eu2-TJ-P2U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="B1T-q5-QfY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eu2-TJ-P2U" secondAttribute="trailing" constant="165" id="B5h-vg-KFz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eu2-TJ-P2U" secondAttribute="bottom" constant="20" id="Ini-Bq-Im7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4uv-E0-9Bh" secondAttribute="bottom" constant="359" id="K9z-Nx-zKJ"/>
-                            <constraint firstItem="4uv-E0-9Bh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MeF-uR-tK1"/>
+                            <constraint firstItem="U4x-XJ-PsG" firstAttribute="top" secondItem="7au-Np-DdW" secondAttribute="bottom" constant="47" id="797-9b-uLi"/>
+                            <constraint firstItem="7au-Np-DdW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GvL-2f-lAo"/>
+                            <constraint firstItem="7au-Np-DdW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Rug-mk-ofX"/>
+                            <constraint firstItem="7au-Np-DdW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="anE-0y-lqS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U4x-XJ-PsG" secondAttribute="trailing" constant="137" id="ekF-dg-Ubm"/>
+                            <constraint firstItem="U4x-XJ-PsG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="137" id="hpN-9i-f4b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="U4x-XJ-PsG" secondAttribute="bottom" constant="157" id="lsD-s2-5A7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="YlH-rx-Nc0" id="cq4-ew-DOB"/>
-                        <outlet property="imageViewHeight" destination="yaA-B7-x0t" id="Etj-hx-rFG"/>
-                        <outlet property="imageViewWidth" destination="0ab-IW-3T1" id="m7X-pR-8nc"/>
-                        <outlet property="scrollView" destination="4uv-E0-9Bh" id="0aC-YF-NHM"/>
+                        <outlet property="imageView" destination="XPs-XJ-kbP" id="Kto-gf-ilc"/>
+                        <outlet property="imageViewHeight" destination="N2j-kC-fE3" id="qci-zl-SYL"/>
+                        <outlet property="imageViewWidth" destination="8Ss-Ot-X3I" id="UbN-TN-wLh"/>
+                        <outlet property="scrollView" destination="7au-Np-DdW" id="Vkc-xA-Wf6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79.200000000000003" y="132.68365817091455"/>
+            <point key="canvasLocation" x="-80.625" y="132.04225352112675"/>
         </scene>
     </scenes>
 </document>
